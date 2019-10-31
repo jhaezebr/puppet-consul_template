@@ -1,6 +1,6 @@
 {
   "name": "claranet-consul_template",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "author": "Claranet",
   "summary": "Install and manage Consul Template and its jobs",
   "license": "Apache-2.0",
@@ -10,15 +10,15 @@
   "dependencies": [
     {
       "name": "puppetlabs/stdlib",
-      "version_requirement": ">= 4.13.1 < 6.0.0"
+      "version_requirement": ">= 4.18.0 < 7.0.0"
     },
     {
       "name": "puppetlabs/concat",
-      "version_requirement": ">= 2.2.0 < 5.0.0"
+      "version_requirement": ">= 5.0.0 < 7.0.0"
     },
     {
-      "name": "puppet/staging",
-      "version_requirement": ">= 3.0.0 <= 4.0.0"
+      "name": "puppet/archive",
+      "version_requirement": ">= 4.0.0"
     }
   ],
   "operatingsystem_support": [
