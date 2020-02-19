@@ -77,14 +77,14 @@ module JSON
     # simplify jsonification of standard types
     def simple_generate(obj)
       case obj
-      when NilClass, :undef
-        'null'
-      when Integer, Float, TrueClass, FalseClass
-        obj.to_s
-      else
-        # Should be a string
-        # keep string integers unquoted
-        (obj =~ %r{\A[-]?(0|[1-9]\d*)\z}) ? obj : obj.to_json
+        when NilClass
+          'null'
+        when Fixnum, Float, TrueClass, FalseClass
+          "#{obj}"
+        else
+          # Should be a string
+          # keep string integers unquoted
+          (obj =~ /\A[-]?\d+\z/) ? obj : obj.to_json
       end
     end
   end # end class
