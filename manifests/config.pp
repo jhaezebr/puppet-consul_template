@@ -16,7 +16,7 @@ class consul_template::config (
   # Using our parent module's pretty_config & pretty_config_indent just because
   $content_full = to_json_pretty($_config_hash)
   # remove the closing }
-  $content = regsubst($content_full, '}$', '')
+  $content = regsubst($content_full, '}$\Z', '')
 
   $concat_name = 'consul-template/config.json'
   concat::fragment { 'consul-service-pre':
